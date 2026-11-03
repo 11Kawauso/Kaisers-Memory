@@ -1,0 +1,25 @@
+// ===== カイザーのセリフ（カイザーの部屋） =====
+// 書き方はトップページの kaiser.txt と同じ。@top でトップページに戻ります。
+// ※ 今のセリフは仮です。
+
+# start
+[通常] ようこそ、私の部屋へ。
+en: Welcome to my room.
+[困り] ……と申し上げたいところなのですが、この部屋はまだ準備中なのです。
+en: ...Or so I would like to say, but this room is still being prepared.
+[通常] 準備が整いましたら、改めてご招待いたしますね。
+en: Once everything is ready, I will invite you again.
+? 戻る -> back
+en: Go back
+? もう少しここにいる -> stay
+en: Stay a little longer
+
+# back
+[通常] かしこまりました。お送りいたします。
+en: Certainly. Allow me to see you out.
+@top
+
+# stay
+[通常] ……はい。どうぞ、ごゆっくり。
+en: ...Of course. Please, take your time.
+@end

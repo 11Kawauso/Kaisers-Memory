@@ -1,0 +1,99 @@
+/* ===== カイザーの部屋 ===== */
+
+body.room {
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 38%, rgba(94, 242, 230, 0.13), transparent 60%),
+    url('../assets/bg-circuit.svg') left top / 360px 360px repeat,
+    linear-gradient(#101315, #050607);
+}
+
+.room-back {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+.room-title {
+  position: fixed;
+  top: 22px;
+  left: 50%;
+  margin: 0;
+  transform: translateX(-50%);
+  color: var(--holo);
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 0.4em;
+  text-shadow: 0 0 10px var(--holo-glow);
+}
+
+.room-stage {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+/* 大きいホログラム */
+.room-holo {
+  width: min(62vw, 760px);
+  margin-bottom: 18vh;
+  border-width: 3px;
+  background: rgba(8, 40, 42, 0.35);
+}
+.room-holo .holo-inner {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 10;
+}
+.room-holo img {
+  width: auto;
+  height: 92%;
+  aspect-ratio: auto;
+  object-fit: contain;
+  image-rendering: pixelated;
+  opacity: 0.75;
+  filter: sepia(1) hue-rotate(130deg) saturate(2.2) brightness(1.1);
+}
+
+.room-floor {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 22vh;
+  background:
+    repeating-linear-gradient(90deg, rgba(94, 242, 230, 0.08) 0 1px, transparent 1px 80px),
+    linear-gradient(rgba(94, 242, 230, 0.12), transparent 2px),
+    linear-gradient(#15191b, #0a0c0d);
+}
+
+/* 通常サイズのカイザー */
+.room-kaiser {
+  position: absolute;
+  left: 50%;
+  bottom: calc(22vh - 10px);
+  padding: 0;
+  border: 0;
+  background: none;
+  line-height: 0;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+.room-kaiser img {
+  image-rendering: pixelated;
+}
+.room-kaiser:hover img {
+  filter: drop-shadow(0 0 8px var(--holo-glow));
+}
+
+.room-dialogue .dialogue {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 4vh;
+  width: min(640px, calc(100vw - 32px));
+  margin: 0 auto;
+  z-index: 10;
+}

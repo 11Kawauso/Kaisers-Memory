@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kaiser's Memory</title>
+    <meta name="description" content="Kaiser's Memory — 作品の記録庫 / An archive of works" />
+    <link rel="icon" type="image/png" href="/images/kaiser/idle.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Orbitron:wght@500;700&display=swap"
+    />
+  </head>
+  <body>
+    <!-- スクロールの長さだけを作る透明な箱。画面の中身は #stage に固定して、JS で動かす -->
+    <div id="scroll-spacer" aria-hidden="true"></div>
+
+    <div id="stage">
+      <div class="bg bg-far" id="bg-far"><div class="bg-deep"></div></div>
+      <div class="bg bg-mid" id="bg-mid"></div>
+
+      <main id="content" class="content"></main>
+
+      <div class="scrollbar" id="scrollbar"></div>
+
+      <button id="kaiser" class="kaiser" type="button" data-i18n-label="talkToKaiser">
+        <img alt="" draggable="false" />
+      </button>
+      <div id="dialogue-root" class="dialogue-root"></div>
+
+      <div class="door-wrap door-top" id="door-top">
+        <div class="door-body">
+          <svg class="door-edge" viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true">
+            <polyline class="edge-shade" points="0,0 44,0 55,50 100,50" />
+            <polyline class="edge-light" points="0,0 44,0 55,50 100,50" />
+          </svg>
+          <div class="handle" data-door="top" role="slider" tabindex="0" data-i18n-label="doorHandle"></div>
+        </div>
+        <header class="site-header">
+          <div class="hdr-left">
+            <span class="counter" data-i18n-label="visitors">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z" />
+                <circle cx="12" cy="12" r="3.2" />
+              </svg>
+              <span id="counter-value">------</span>
+            </span>
+          </div>
+          <div class="hdr-title">KAISER'S MEMORY</div>
+          <div class="hdr-right">
+            <div class="search" id="search">
+              <input id="search-input" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder" />
+              <button id="search-btn" class="icon-btn" type="button" data-i18n-label="search">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="10.5" cy="10.5" r="6.5" />
+                  <path d="M15.5 15.5 21 21" />
+                </svg>
+              </button>
+            </div>
+            <button id="menu-btn" class="icon-btn" type="button" aria-expanded="false" aria-controls="menu" data-i18n-label="menu">
+              <span class="burger"><span></span></span>
+            </button>
+          </div>
+          <nav id="menu" class="menu holo-panel" hidden></nav>
+        </header>
+      </div>
+
+      <div class="door-wrap door-bottom" id="door-bottom">
+        <div class="door-body">
+          <svg class="door-edge" viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true">
+            <polyline class="edge-shade" points="0,0 44,0 55,50 100,50" />
+            <polyline class="edge-light" points="0,0 44,0 55,50 100,50" />
+          </svg>
+          <div class="handle" data-door="bottom" role="slider" tabindex="0" data-i18n-label="doorHandle"></div>
+        </div>
+      </div>
+
+      <button id="reopen" class="reopen" type="button" hidden data-i18n-label="reopen">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <polygon class="hex" points="50,4 90,27 90,73 50,96 10,73 10,27" />
+          <polygon class="arrow" points="50,32 70,62 30,62" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="modal-root"></div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

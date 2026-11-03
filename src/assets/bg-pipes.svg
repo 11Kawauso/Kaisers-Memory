@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <!-- 配管と機械の箱（仮の背景） -->
+  <g fill="none" stroke="#000000" stroke-opacity="0.26" stroke-width="16" stroke-linecap="square">
+    <path d="M130 0V320M130 240H480M480 175V500M480 430H525V500" />
+    <path d="M820 760V620H1120V420" />
+    <path d="M1040 0V90H900V250" />
+    <path d="M300 760V680H60" />
+  </g>
+  <g fill="none" stroke="#000000" stroke-opacity="0.18" stroke-width="6">
+    <path d="M160 0V200H420" />
+    <path d="M860 760V650H1090" />
+  </g>
+  <g fill="#ffffff" fill-opacity="0.06">
+    <rect x="445" y="500" width="205" height="65" />
+    <rect x="860" y="240" width="90" height="120" />
+    <rect x="20" y="640" width="120" height="70" />
+  </g>
+  <g fill="#000000" fill-opacity="0.18">
+    <rect x="455" y="510" width="40" height="8" />
+    <rect x="870" y="250" width="70" height="6" />
+    <rect x="870" y="262" width="70" height="6" />
+  </g>
+</svg>

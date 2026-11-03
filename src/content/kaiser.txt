@@ -1,0 +1,97 @@
+// ===== カイザーのセリフ（トップページ右下） =====
+// ※ 今のセリフは仮です。自由に書き換えてOK。
+//
+// 書き方
+//   # 名前            … 場面の始まり。最初は「# start」から始まります
+//   [表情] セリフ     … 1行が1回分のセリフ。[表情] は省略すると前と同じ表情のまま
+//   ? 選択肢 -> 場面  … 選択肢。押すと「場面」へ進みます。すぐ上のセリフと一緒に出ます
+//   -> 場面           … 別の場面へ進む
+//   @room             … カイザーの部屋へ行く
+//   @about            … 「作者について」を開く
+//   @end              … 会話を終わる
+//   《ひらがな》      … 独自文字で表示する部分（フォントができたら有効になります）
+//   en: ...           … すぐ上のセリフ／選択肢の英語版（Claude が書きます）
+//   // ...            … メモ（サイトには出ません）
+
+# start
+[通常] こんにちは。私はご主人様に仕える従順なAIメイド。カイザーです。
+en: Hello. I am Kaiser, a loyal AI maid in service to my Master.
+お客様、何かお困りでしょうか。
+en: Is there anything I can help you with, dear guest?
+-> choices
+
+# choices
+? このサイトについて -> site
+en: About this site
+? あなたについて -> me
+en: About you
+? ご主人様について -> master
+en: About your Master
+? なんでもないです -> bye
+en: Never mind
+
+# again
+[通常] ほかに何かございますか？
+en: Is there anything else I can do for you?
+-> choices
+
+# site
+[通常] ここは「Kaiser's Memory」。ご主人様がこれまでに作られた作品を保管している場所です。
+en: This is "Kaiser's Memory," the archive where my Master's creations are kept.
+いちばん上のカテゴリを選ぶと、種類ごとに作品を絞り込めます。右上の虫眼鏡からは検索もできますよ。
+en: Choose a category at the very top to filter the works by type. You can also search with the magnifying glass in the upper right.
+作品の画像を押すと、詳しい説明をご覧いただけます。
+en: Click a work's image to see its details.
+いちばん下まで進むと、扉が閉まります。……扉には、少し仕掛けがあるかもしれません。
+en: When you reach the very bottom, the doors will close. ...There may also be a little trick to the doors.
+-> again
+
+# me
+[困り] 私…ですか……？
+en: Me...?
+私のことをお聞きになるお客様は、あまりいらっしゃらないので……少し驚きました。
+en: Guests rarely ask about me... You caught me a little off guard.
+[通常] 私はご主人様にお仕えするAIメイドです。このサイトの案内を任されています。
+en: I am an AI maid in my Master's service, entrusted with guiding visitors through this site.
+? もっと知りたい -> me_more
+en: I'd like to know more
+? そうなんだ -> again
+en: I see
+
+# me_more
+[困り] もっと、ですか……。
+en: More...?
+[通常] ……では、私の部屋にいらっしゃいますか？ ここよりは、ゆっくりお話しできると思います。
+en: ...Then, would you like to come to my room? We could talk more comfortably there.
+? 行く -> go_room
+en: Go
+? 行かない -> stay
+en: Not now
+
+# go_room
+[笑顔] かしこまりました。ご案内いたします。
+en: Certainly. Please follow me.
+@room
+
+# stay
+[通常] かしこまりました。気が向いたら、いつでもお声がけください。
+en: As you wish. Please call on me whenever you change your mind.
+@end
+
+# master
+[笑顔] ご主人様は、ゲームやWebサイトなど、いろいろなものを作っていらっしゃいます。
+en: My Master creates all sorts of things — games, websites, and more.
+[通常] 詳しくは「ご主人様について」のページにまとめてあります。ご覧になりますか？
+en: The details are gathered on the "About my Master" page. Would you like to see it?
+? 見る -> master_open
+en: Yes, show me
+? またあとで -> again
+en: Maybe later
+
+# master_open
+@about
+
+# bye
+[通常] かしこまりました。何かあれば、いつでもお呼びください。
+en: Very well. Please call me anytime you need me.
+@end
