@@ -2,8 +2,8 @@ export type Lang = 'ja' | 'en' | 'glyph'
 /** 言語ごとの文章。文字列だけなら全言語で同じ文章を出す */
 export type Text = string | { ja: string; en?: string }
 
-/** 独自文字のフォントができたら true にする（src/styles/base.css の @font-face も有効にする） */
-export const GLYPH_READY = false
+/** 独自文字（四角五線 Font）を選べるようにするか */
+export const GLYPH_READY = true
 
 const KEY = 'km.lang'
 const listeners = new Set<() => void>()

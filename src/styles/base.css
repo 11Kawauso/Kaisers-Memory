@@ -21,13 +21,13 @@ html.scroll-blue {
   --scroll: #3a9fd0;
 }
 
-/* 独自文字のフォント（できたら有効にする）
+/* 独自文字のフォント「四角五線 Font」。ひらがなの範囲だけに使う */
 @font-face {
   font-family: 'KaiserGlyph';
-  src: url('../assets/kaiser-glyph.woff2') format('woff2');
+  src: url('../assets/shikaku-gosen.woff2') format('woff2');
   unicode-range: U+3041-3096;
+  font-display: block;
 }
-*/
 html.lang-glyph body,
 .glyph {
   font-family: 'KaiserGlyph', var(--font-ui);
